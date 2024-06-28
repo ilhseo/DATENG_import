@@ -1,0 +1,8 @@
+Dateng_2
+
+Questions:
+- Are there any list of sources?
+- Are ther any list of IoC types?
+
+Assumptions:
+- The text data comes in bulk, NOT separated in different textfiles.
