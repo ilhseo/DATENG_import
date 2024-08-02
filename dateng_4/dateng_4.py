@@ -60,6 +60,12 @@ def __(lines, re):
 
 
 @app.cell
+def __(mo):
+    mo.md(r"# Dra slideren for å vise hvilket datasett som skal plottes")
+    return
+
+
+@app.cell
 def __(entire_dataset, mo):
     superset_selector = mo.ui.slider(1, len(entire_dataset), label='select superset')
     superset_selector
@@ -95,6 +101,12 @@ def __(entire_dataset, plt, superset_idx):
 
 
 @app.cell
+def __(mo):
+    mo.md(r"# Forsøker med nested coordinates")
+    return
+
+
+@app.cell
 def __(entire_dataset, plt):
     from matplotlib.patches import Rectangle
     plt.figure(figsize=(30,5))
@@ -123,7 +135,7 @@ def __(entire_dataset, plt):
         for j2, subset2 in enumerate(superset2):
             sub_x = subset2['x'] 
             sub_y = subset2['y']
-            
+
             subset_color_idx = colorgroup*4 + j2 +1
             subset_color = colors[subset_color_idx]
             plt.scatter(sub_x, sub_y, color=subset_color)
@@ -132,7 +144,7 @@ def __(entire_dataset, plt):
 
             rectangle = Rectangle((x_anchor, y_anchor), x_length, y_length, edgecolor=subset_color, facecolor='none')
             plt.gca().add_patch(rectangle)
-            
+
             super_x.extend(sub_x)
             super_y.extend(sub_y)
 
@@ -142,10 +154,9 @@ def __(entire_dataset, plt):
 
         rectangle = Rectangle((x_anchor, y_anchor), x_length, y_length, edgecolor=superset_color, facecolor='none')
         plt.gca().add_patch(rectangle)
-        
+
 
     plt.show()
-
     return (
         Rectangle,
         cmap,
