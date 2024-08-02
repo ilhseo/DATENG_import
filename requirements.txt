@@ -1,0 +1,6 @@
+json
+pandas
+re
+marimo
+matplotlib
+networkx
